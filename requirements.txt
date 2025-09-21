@@ -1,0 +1,13 @@
+streamlit
+numpy
+pandas
+matplotlib
+requests
+beautifulsoup4
+plotly
+datetime
+openai
+gspread 
+gspread_dataframe
+oauth2client
+snowflake-connector-python
