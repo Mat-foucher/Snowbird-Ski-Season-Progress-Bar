@@ -8,8 +8,11 @@ from collections import Counter
 import os
 import json
 import gspread
+from google.cloud import bigquery
 from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe
+
+client = bigquery.Client()
 
 def get_live_data():
     
