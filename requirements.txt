@@ -10,5 +10,5 @@ openai
 gspread 
 gspread_dataframe
 oauth2client
-goolge-cloud-bigquery
+google-cloud-bigquery
 pyarrow
