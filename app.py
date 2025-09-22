@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd 
 from scraper_forecaster import get_live_data
-from utils import format_time_column, plot_base_graph, plot_rose_graph, plot_indi1
+from utils import format_time_column, plot_base_graph
 from plotly.subplots import make_subplots
 import os
 
