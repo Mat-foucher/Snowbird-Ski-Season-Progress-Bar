@@ -25,9 +25,8 @@ def main(option='PEAK'):
     # Prebuilt Forecasted Season from BigQuery:
     fdf = pd.read_csv('2526f_Streamlit.csv')
 
-    st.title("Snowbird Patrol Dashboard (UNOFFICIAL)")
+    st.title("Snowbird Season Progress Bar")
     st.markdown(f"**Last Updated:** {df['DATETIME'].max()}")
-    st.markdown("**Summary of Past 24h:**")
     plot_base_graph(df,fdf)
     #st.write(ai_summary)
     # Print off datasets (test):
