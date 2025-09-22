@@ -11,7 +11,7 @@ import gspread
 from google.cloud import bigquery
 from gspread_dataframe import set_with_dataframe
 
-client = bigquery.Client()
+client = bigquery.Client.from_service_account_json('/etc/secrets/bigquery_creds.json')
 
 def get_live_data():
     
