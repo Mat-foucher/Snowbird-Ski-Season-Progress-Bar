@@ -10,6 +10,5 @@ openai
 gspread 
 gspread_dataframe
 oauth2client
-snowflake-connector-python
 goolge-cloud-bigquery
 pyarrow
