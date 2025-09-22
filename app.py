@@ -30,7 +30,9 @@ def main(option='PEAK'):
     st.markdown("**Summary of Past 24h:**")
     plot_base_graph(df,fdf)
     #st.write(ai_summary)
-            
+    # Print off datasets (test):
+    for dataset in client.list_datasets():
+        st.write(dataset.dataset_id)        
 
 
 
