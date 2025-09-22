@@ -21,10 +21,6 @@ def main(option='PEAK'):
     credentials = service_account.Credentials.from_service_account_info(creds_info)
     client = bigquery.Client(credentials=credentials, project=credentials.project_id)
 
-    # Print off datasets (test):
-    for dataset in client.list_datasets():
-        st.write(dataset.dataset_id)
-
 
     # Prebuilt Forecasted Season from BigQuery:
     fdf = pd.read_csv('2526f_Streamlit.csv')

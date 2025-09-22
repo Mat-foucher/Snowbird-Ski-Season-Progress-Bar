@@ -45,23 +45,23 @@ def get_live_data():
     # Split the dataframe:
 
 
-    s_cols = sinnersdf.columns[0].split()
-    #print(s_cols)
+    # s_cols = sinnersdf.columns[0].split()
+    # #print(s_cols)
 
-    # New Dataframe for Sinners that has cleaned columns:
-    sdf = pd.DataFrame(columns=s_cols)
+    # # New Dataframe for Sinners that has cleaned columns:
+    # sdf = pd.DataFrame(columns=s_cols)
 
-    # Assign the rows of sinnersdf to sdf by splitting by spaces into new columns:
-    for i in range(len(sinnersdf)):
-        if i > 1:
-            splitrow = str(sinnersdf.iloc[i]).split()
-            #print(splitrow[6:13])
-            #values = splitrow[6:13]
-            date = str(current_year) + '-' + splitrow[6] + '-' + splitrow[7]
-            #print(date)
-            splitrow[7] = date
-            sdf.loc[i] = splitrow[7:13]
-        sdf.reset_index(drop=True,inplace=True)
+    # # Assign the rows of sinnersdf to sdf by splitting by spaces into new columns:
+    # for i in range(len(sinnersdf)):
+    #     if i > 1:
+    #         splitrow = str(sinnersdf.iloc[i]).split()
+    #         #print(splitrow[6:13])
+    #         #values = splitrow[6:13]
+    #         date = str(current_year) + '-' + splitrow[6] + '-' + splitrow[7]
+    #         #print(date)
+    #         splitrow[7] = date
+    #         sdf.loc[i] = splitrow[7:13]
+    #     sdf.reset_index(drop=True,inplace=True)
     #sdf.head(100)
 
     #############################################
