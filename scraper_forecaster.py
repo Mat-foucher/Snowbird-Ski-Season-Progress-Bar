@@ -5,13 +5,20 @@ import pandas as pd
 from io import StringIO
 from datetime import datetime
 from collections import Counter
+from google.oauth2 import service_account
 import os
 import json
 import gspread
 from google.cloud import bigquery
 from gspread_dataframe import set_with_dataframe
 
-client = bigquery.Client.from_service_account_json('/etc/secrets/bigquery_creds.json')
+creds_info = json.loads(os.environ['GOOGLE_APP_CREDS'])
+credentials = service_account.Credentials.from_service_account_info(creds_info)
+client = bigquery.Client(credentials=credentials, project=credentials.project_id)
+
+# Print off datasets (test):
+for dataset in client.list_datasets():
+    print(dataset.dataset_id)
 
 def get_live_data():
     
