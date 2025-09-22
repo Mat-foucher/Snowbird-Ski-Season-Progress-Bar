@@ -12,13 +12,8 @@ import gspread
 from google.cloud import bigquery
 from gspread_dataframe import set_with_dataframe
 
-creds_info = json.loads(os.environ['GOOGLE_APP_CREDS'])
-credentials = service_account.Credentials.from_service_account_info(creds_info)
-client = bigquery.Client(credentials=credentials, project=credentials.project_id)
 
-# Print off datasets (test):
-for dataset in client.list_datasets():
-    print(dataset.dataset_id)
+
 
 def get_live_data():
     
@@ -26,19 +21,19 @@ def get_live_data():
     # SCRAPING LOGIC 
     ################################################################
 
-    snowbird_sinners_url = "https://snowbirdskipatrol.com/Wx/SIN.HTM"
+    # snowbird_sinners_url = "https://snowbirdskipatrol.com/Wx/SIN.HTM"
     snowbird_bigroundup_url = "https://snowbirdskipatrol.com/Wx/BIGROUNDUP.HTM"
-    response = requests.get(snowbird_sinners_url)
+    # response = requests.get(snowbird_sinners_url)
     response2 = requests.get(snowbird_bigroundup_url)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    # soup = BeautifulSoup(response.text, 'html.parser')
     soup2 = BeautifulSoup(response2.text, 'html.parser')
     #print(str(soup).split('<pre>')[1].split('</pre>')[0],str(soup2).split('<pre>')[1].split('</pre>')[0])
 
     # Table String Lengths:
-    sinners_tablestring = str(soup).split('<pre>')[1].split('</pre>')[0]
+    # sinners_tablestring = str(soup).split('<pre>')[1].split('</pre>')[0]
     bigroundup_tablestring = str(soup2).split('<pre>')[1].split('</pre>')[0]
 
-    sinnersdf = pd.read_fwf(StringIO(sinners_tablestring))
+    # sinnersdf = pd.read_fwf(StringIO(sinners_tablestring))
     bigroundupdf = pd.read_fwf(StringIO(bigroundup_tablestring))
 
     current_year = datetime.now().year
